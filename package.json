@@ -1,0 +1,19 @@
+{
+  "name": "fundbecasmx-api",
+  "version": "1.0.0",
+  "description": "API con información de becas nacionales e internacionales para mexicanos",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "author": "alondralei.delgado",
+  "license": "MIT",
+  "devDependencies": {
+    "colors": "^1.4.0",
+    "nodemon": "^2.0.19"
+  },
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
