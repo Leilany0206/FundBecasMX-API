@@ -42,15 +42,26 @@ app.get ('/international', (req, res) => {
     }
 });
 
-console.log(international.length);
-
 // POST
+    // Investigar cómo agregar un id continuo sin conocer todo el array
 app.post('/international', (req, res) => {
     const newScholarship = req.body;
     international.push(newScholarship);
     let auxId = international.length;
     let response = { message: `¡Beca #${auxId} agregada correctamente!`}
     res.status(201).json(response);
+
+    console.log(international);
 });
 
-// 
+// PATCH
+app.patch('/international/:id', (req, res) => {
+    const body = req.body;
+    const { id }= req.params;
+    const findIndex = international.findIndex( scholarship => scholarship.id === parseInt(id) ) 
+    if (findIndex !== -1) {
+        const internationalCopy = { ...international[findIndex] };
+        international[findIndex] = { ...internationalCopy, ...body }
+        res.json({ message: 'Beca modificada correctamente', body })
+    } else res.json({ message: 'El id que trata modificar no existe'})
+});
