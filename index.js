@@ -65,3 +65,15 @@ app.patch('/international/:id', (req, res) => {
         res.json({ message: 'Beca modificada correctamente', body })
     } else res.json({ message: 'El id que trata modificar no existe'})
 });
+
+// PUT 
+app.put('/international/:id', (req, res) => {
+    const body = req.body;
+    const { id }= req.params;
+    const findIndex = international.findIndex( scholarship => scholarship.id === parseInt(id) ) 
+    if (findIndex !== -1) {
+        const internationalCopy = { ...international[findIndex] };
+        international[findIndex] = { ...internationalCopy, ...body }
+        res.json({ message: 'Beca modificada correctamente', body })
+    } else res.json({ message: 'El id que trata modificar no existe'})
+});
