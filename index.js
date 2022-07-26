@@ -6,7 +6,7 @@ const port = 3000;
 // MIDDLEWARE
 app.use(express.json());
 
-const international = [
+let international = [
     { id: 1, name: "KGSP", country: "Corea del Sur", undergraduate: true, graduate: true },
     { id: 2, name: "Turkiye Burslari", country: "Turquía", undergraduate: true, graduate: true },
     { id: 3, name: "Adobe internship", country: "USA", undergraduate: false, graduate: false },
@@ -75,5 +75,18 @@ app.put('/international/:id', (req, res) => {
         const internationalCopy = { ...international[findIndex] };
         international[findIndex] = { ...internationalCopy, ...body }
         res.json({ message: 'Beca modificada correctamente', body })
+    } else res.json({ message: 'El id que trata modificar no existe'})
+});
+
+// DELETE
+app.delete('/international/:id', (req, res) => {
+    const body = req.body;
+    const { id }= req.params;
+    const findIndex = international.findIndex( scholarship => scholarship.id === parseInt(id) ) 
+    if (findIndex !== -1) {
+        let internationalCopy = [ ...international ];
+        internationalCopy.splice( findIndex, 1 )
+        international = [ ...internationalCopy]
+
     } else res.json({ message: 'El id que trata modificar no existe'})
 });
