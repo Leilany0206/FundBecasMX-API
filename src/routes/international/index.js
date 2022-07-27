@@ -1,5 +1,8 @@
 const express = require('express');
 const internationalRouter = express.Router();
+const InternationalServices = require('../../services/international/index');
+
+const internationalService = new InternationalServices();
 
 // GET 
 // internationalRouter.get('/', (req, res) => {
@@ -8,8 +11,9 @@ const internationalRouter = express.Router();
 // });
 
 // GET INTERNATIONAL
-internationalRouter.get('/international', (req, res) => {
-    res.json(international);
+internationalRouter.get('/', async(req, res) => {
+    const international = await internationalService.findAll();
+    res.status(200).json(international);
 });
 
 // internationalRouter.get('/international/:id') 
