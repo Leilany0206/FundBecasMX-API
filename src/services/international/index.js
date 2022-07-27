@@ -37,6 +37,33 @@ class InternationalServices {
             }, 0);
         });
     }
+
+    create(){
+
+    }
+
+    ediPartial() {
+
+    }
+
+    editComplete() {
+        s
+    }
+
+    delete(id) {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                const findIndex = this.international.findIndex( scholarship => scholarship.id === parseInt(id) );
+                if (findIndex !== -1) {
+                    const internationalCopy = [ ...this.international ];
+                    internationalCopy.splice( findIndex, 1 );
+                    this.international = [ ...internationalCopy];
+
+                    resolve(this.international);
+                } else res.json({ message: 'El id que trata modificar no existe'})
+            }, 0);
+        });
+    }
 } 
 
 module.exports = InternationalServices;
