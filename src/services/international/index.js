@@ -14,14 +14,29 @@ class InternationalServices {
         ];
     }
 
-    findAll() {
+    findAll(country) {
         return new Promise((resolve, reject) => {
             setTimeout(() => {
-                if (this.international) {
-                    resolve(this.international);
+                if (country) {
+                    const filteredData = this.international.filter(scholarship => scholarship.country === country);
+                    resolve(filteredData);
+                    console.log(filteredData)
                 }
-            }, 1000);
+                resolve(this.international);
+            }, 0);
         });
     }
+
+    findOne(id) {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                const scholarship = this.international.find(scholarship => scholarship.id === parseInt(id));
+                if (scholarship) {
+                    resolve(scholarship);
+                }
+            }, 0);
+        });
+    }
+} 
 
 module.exports = InternationalServices;

@@ -12,28 +12,27 @@ const internationalService = new InternationalServices();
 
 // GET INTERNATIONAL
 internationalRouter.get('/', async(req, res) => {
+    const { country } = req.query;
     try {
-    const international = await internationalService.findAll();
-    res.status(200).json(international);
+        const international = await internationalService.findAll(country);
+        res.status(200).json(international);
     } catch(error) {
         res.status(404).json({ message: 'No hay datos'})
     }
 });
 
-// internationalRouter.get('/international/:id') 
- 
-// GET CON QUERY PARAMS
-    // Termina get
-internationalRouter.get ('/international', (req, res) => {
-    const { name, country, undergraduate } = req.query;
- 
-    if (name && country && undergraduate) {
-        res.json({ name, country, undergraduate });
-    } else {
-        res.send('No está bien');
+
+// GET SCHOLARSHIP BY ID
+internationalRouter.get('/:id', async(req, res) => {
+    const { id } = req.params;
+    try {
+        const internationalID = await internationalService.findOne(id);
+        res.status(200).json(internationalID);
+    } catch(error) {
+        res.status(404).json({ message: 'No existe una beca con ese id'})
     }
 });
- 
+
 // POST
     // Investigar cómo agregar un id continuo sin conocer todo el array
 internationalRouter.post('/international', (req, res) => {
