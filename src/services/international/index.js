@@ -23,6 +23,5 @@ class InternationalServices {
             }, 1000);
         });
     }
-} 
 
 module.exports = InternationalServices;

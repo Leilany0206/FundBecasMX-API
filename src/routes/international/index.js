@@ -12,8 +12,12 @@ const internationalService = new InternationalServices();
 
 // GET INTERNATIONAL
 internationalRouter.get('/', async(req, res) => {
+    try {
     const international = await internationalService.findAll();
     res.status(200).json(international);
+    } catch(error) {
+        res.status(404).json({ message: 'No hay datos'})
+    }
 });
 
 // internationalRouter.get('/international/:id') 
