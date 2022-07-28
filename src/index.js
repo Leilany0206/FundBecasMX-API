@@ -1,5 +1,4 @@
 const express = require('express');
-const colors = require('colors');
 
 // CORS
 const cors = require('cors');
@@ -7,7 +6,7 @@ const cors = require('cors');
 const routerApi = require('./routes/main.controller')
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 // MIDDLEWARE
 app.use(express.json());
@@ -31,7 +30,7 @@ app.get('/', (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log('Servidor express listening...'.rainbow)
+    console.log('Servidor express listening...')
 });
 
 routerApi(app);
