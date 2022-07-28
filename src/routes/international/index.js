@@ -23,7 +23,7 @@ internationalRouter.get('/', async(req, res) => {
 
 
 // GET SCHOLARSHIP BY ID
-internationalRouter.get('/:id', async(req, res) => {
+internationalRouter.get('/:id', async (req, res) => {
     const { id } = req.params;
     try {
         const internationalID = await internationalService.findOne(id);
@@ -35,14 +35,14 @@ internationalRouter.get('/:id', async(req, res) => {
 
 // POST
     // Investigar cómo agregar un id continuo sin conocer todo el array
-internationalRouter.post('/international', (req, res) => {
+internationalRouter.post('/', async (req, res) => {
     const newScholarship = req.body;
-    international.push(newScholarship);
-    let auxId = international.length;
-    let response = { message: `¡Beca #${auxId} agregada correctamente!`}
-    res.status(201).json(response);
- 
-    console.log(international);
+    try {
+        const internationalCreated = await internationalService.create(newScholarship);
+        res.status(201).json(internationalCreated);
+    } catch(error) {
+        res.status(501).json({ message: 'No fue posible agregar la beca'})
+    }
 });
  
 // PATCH
@@ -65,7 +65,7 @@ internationalRouter.put('/international/:id', (req, res) => {
     if (findIndex !== -1) {
         const internationalCopy = { ...international[findIndex] };
         international[findIndex] = { ...internationalCopy, ...body }
-        res.json({ message: 'Beca modificada correctamente', body })
+        res.json({ message: 'Bleca modificada correctamente', body })
     } else res.json({ message: 'El id que trata modificar no existe'})
 });
  

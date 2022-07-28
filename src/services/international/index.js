@@ -38,8 +38,15 @@ class InternationalServices {
         });
     }
 
-    create(){
-
+    create(newScholarship){
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                this.international.push(newScholarship);
+                let auxId = this.international.length;
+                let response = { message: `¡Beca #${auxId} agregada correctamente!` }
+                resolve(response);
+            }, 1000);
+        });    
     }
 
     ediPartial() {
