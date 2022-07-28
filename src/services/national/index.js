@@ -22,7 +22,6 @@ class nationalServices {
                 if (tipo) {
                     const filteredData = this.national.filter(scholarship => scholarship.tipo === tipo);
                     resolve(filteredData);
-                    console.log(filteredData)
                 }
                 resolve(this.national);
             }, 0);

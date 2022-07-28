@@ -22,7 +22,6 @@ class InternationalServices {
                 if (country) {
                     const filteredData = this.international.filter(scholarship => scholarship.country === country);
                     resolve(filteredData);
-                    console.log(filteredData)
                 }
                 resolve(this.international);
             }, 0);
