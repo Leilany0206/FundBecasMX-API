@@ -52,9 +52,9 @@ internationalRouter.patch('/:id', async (req, res) => {
 
     try {
         const internationalPatch = await internationalService.editPartial(id, body);
-        res.status(201).json(internationalPatch);
+        res.status(200).json(internationalPatch);
     } catch(error) {
-        res.status(404).json({ message: 'No fue posible modificar la beca'})
+        res.status(501).json({ message: 'No fue posible modificar la beca'})
     }
 });
  
@@ -65,9 +65,9 @@ internationalRouter.put('/:id', async (req, res) => {
 
     try {
         const internationalPatch = await internationalService.editComplete(id, body);
-        res.status(201).json(internationalPatch);
+        res.status(200).json(internationalPatch);
     } catch(error) {
-        res.status(404).json({ message: 'No fue posible modificar la beca'})
+        res.status(501).json({ message: 'No fue posible modificar la beca'})
     }
 });
  
