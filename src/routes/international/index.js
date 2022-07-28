@@ -6,7 +6,7 @@ const internationalService = new InternationalServices();
 
 // GET 
 // internationalRouter.get('/', (req, res) => {
-//     // Podrías agregar una descripción más detallada desde otro archivo o buscar que se muestre el readme
+// BONUS: Podrías agregar una descripción más detallada desde otro archivo o buscar que se muestre el readme
 //     res.send('Bienvenido a FundBecasMX API')
 // });
 
@@ -34,7 +34,7 @@ internationalRouter.get('/:id', async (req, res) => {
 });
 
 // POST
-    // Investigar cómo agregar un id continuo sin conocer todo el array
+    // BONUS: Investigar cómo agregar un id continuo sin conocer todo el array
 internationalRouter.post('/', async (req, res) => {
     const newScholarship = req.body;
     try {
@@ -46,27 +46,29 @@ internationalRouter.post('/', async (req, res) => {
 });
  
 // PATCH
-internationalRouter.patch('/international/:id', (req, res) => {
+internationalRouter.patch('/:id', async (req, res) => {
     const body = req.body;
     const { id }= req.params;
-    const findIndex = international.findIndex( scholarship => scholarship.id === parseInt(id) )
-    if (findIndex !== -1) {
-        const internationalCopy = { ...international[findIndex] };
-        international[findIndex] = { ...internationalCopy, ...body }
-        res.json({ message: 'Beca modificada correctamente', body })
-    } else res.json({ message: 'El id que trata modificar no existe'})
+
+    try {
+        const internationalPatch = await internationalService.editPartial(id, body);
+        res.status(201).json(internationalPatch);
+    } catch(error) {
+        res.status(404).json({ message: 'No fue posible modificar la beca'})
+    }
 });
  
 // PUT
-internationalRouter.put('/international/:id', (req, res) => {
+internationalRouter.put('/:id', async (req, res) => {
     const body = req.body;
     const { id }= req.params;
-    const findIndex = international.findIndex( scholarship => scholarship.id === parseInt(id) )
-    if (findIndex !== -1) {
-        const internationalCopy = { ...international[findIndex] };
-        international[findIndex] = { ...internationalCopy, ...body }
-        res.json({ message: 'Bleca modificada correctamente', body })
-    } else res.json({ message: 'El id que trata modificar no existe'})
+
+    try {
+        const internationalPatch = await internationalService.editComplete(id, body);
+        res.status(201).json(internationalPatch);
+    } catch(error) {
+        res.status(404).json({ message: 'No fue posible modificar la beca'})
+    }
 });
  
 // DELETE

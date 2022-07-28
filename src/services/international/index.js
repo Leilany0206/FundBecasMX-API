@@ -1,3 +1,5 @@
+const { response } = require("express");
+
 class InternationalServices {
 
     constructor() {
@@ -43,19 +45,39 @@ class InternationalServices {
             setTimeout(() => {
                 this.international.push(newScholarship);
                 let auxId = this.international.length;
-                let response = { message: `¡Beca #${auxId} agregada correctamente!` }
+                const response = { message: `¡Beca #${auxId} agregada correctamente!` }
                 resolve(response);
-            }, 1000);
+            }, 10);
         });    
-    }
+    };
 
-    ediPartial() {
+    editPartial(id, body) {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                const findIndex = this.international.findIndex( scholarship => scholarship.id === parseInt(id) );
+                if (findIndex !== -1) {
+                    const internationalCopy = { ...this.international[findIndex] };
+                    this.international[findIndex] = { ...internationalCopy, ...body };
+                    const response = { message: 'Beca modificada correctamente', body };
+                    resolve(response);
+                };
+            }, 10);
+        });
+    };
 
-    }
-
-    editComplete() {
-        s
-    }
+    editComplete(id, body) {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                const findIndex = this.international.findIndex( scholarship => scholarship.id === parseInt(id) );
+                if (findIndex !== -1) {
+                    const internationalCopy = { ...this.international[findIndex] };
+                    this.international[findIndex] = { ...internationalCopy, ...body };
+                    const response = { message: 'Beca modificada correctamente', body };
+                    resolve(response);
+                };
+            }, 10);
+        });
+    };
 
     delete(id) {
         return new Promise((resolve, reject) => {
