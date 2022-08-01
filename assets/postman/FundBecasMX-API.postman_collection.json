@@ -1,0 +1,753 @@
+{
+	"info": {
+		"_postman_id": "0cddd66f-b42b-4bc5-84b4-834658a91992",
+		"name": "FundBecasMX-API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22016708"
+	},
+	"item": [
+		{
+			"name": "root-dummy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/dummy/hola",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"dummy",
+						"hola"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "root-dummy",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/dummy/hola",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"dummy",
+								"hola"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "10"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a-RZVn073kQYt/4wL/mAnEsL76990\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 01 Aug 2022 19:50:38 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "hola mundo"
+				}
+			]
+		},
+		{
+			"name": "getAll INTERNATIONAL",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/international",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"international"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "getAll INTERNATIONAL",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/international",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"international"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "364"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"16c-Wc3nHULaSGskyDz64xWeCTEsado\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 01 Aug 2022 19:50:47 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"KGSP\",\n        \"country\": \"Corea del Sur\",\n        \"undergraduate\": true,\n        \"graduate\": true\n    },\n    {\n        \"id\": 2,\n        \"name\": \"Turkiye Burslari\",\n        \"country\": \"Turquía\",\n        \"undergraduate\": true,\n        \"graduate\": true\n    },\n    {\n        \"id\": 3,\n        \"name\": \"Adobe internship\",\n        \"country\": \"USA\",\n        \"undergraduate\": false,\n        \"graduate\": false\n    },\n    {\n        \"id\": 4,\n        \"name\": \"Monbukagakusho MEXT\",\n        \"country\": \"Japón\",\n        \"undergraduate\": true,\n        \"graduate\": true\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "getOne",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/international/3",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"international",
+						"3"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "getOne",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/international/3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"international",
+								"3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "89"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"59-IsjkU6zwz7dDeWCezvIG9NwaAzA\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 01 Aug 2022 19:50:55 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 3,\n    \"name\": \"Adobe internship\",\n    \"country\": \"USA\",\n    \"undergraduate\": false,\n    \"graduate\": false\n}"
+				}
+			]
+		},
+		{
+			"name": "getAll query params",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/international/?country=Corea del Sur",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"international",
+						""
+					],
+					"query": [
+						{
+							"key": "country",
+							"value": "Corea del Sur"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "getAll query params",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/international/?country=Corea del Sur",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"international",
+								""
+							],
+							"query": [
+								{
+									"key": "country",
+									"value": "Corea del Sur"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "87"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"57-YRt/N7cfL6QUvaeQSv0mj9XHAzE\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 01 Aug 2022 19:51:02 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"KGSP\",\n        \"country\": \"Corea del Sur\",\n        \"undergraduate\": true,\n        \"graduate\": true\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 5,\r\n    \"name\": \"KGSP2\",\r\n    \"country\": \"Corea\",\r\n    \"undergraduate\": false,\r\n    \"graduate\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/international/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"international",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "partialEdit",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Adobe internship 2\",\r\n    \"country\": \"USA\",\r\n    \"undergraduate\": true,\r\n    \"graduate\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/international/3",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"international",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "completeEdit",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"KGSP2\",\r\n    \"country\": \"Corea\",\r\n    \"undergraduate\": false,\r\n    \"graduate\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/international/4",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"international",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/international/3",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"international",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAll NATIONAL",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/national",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"national"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "getAll NATIONAL",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/national",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"national"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "374"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"176-ml3B6wWQEq5qwzRKsxzVvhLTUmE\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 01 Aug 2022 19:53:04 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"nombre\": \"Bécalos BeTech\",\n        \"tipo\": \"Pago de estudios\",\n        \"pregrado\": false,\n        \"posgrado\": false\n    },\n    {\n        \"id\": 2,\n        \"nombre\": \"Bécalos English Challenge\",\n        \"tipo\": \"Idioma\",\n        \"pregrado\": true,\n        \"posgrado\": false\n    },\n    {\n        \"id\": 3,\n        \"nombre\": \"BécALAS\",\n        \"tipo\": \"Mentoria\",\n        \"pregrado\": true,\n        \"posgrado\": true\n    },\n    {\n        \"id\": 4,\n        \"nombre\": \"Tu futuro con Bécalos\",\n        \"tipo\": \"Apoyo económico\",\n        \"pregrado\": true,\n        \"posgrado\": false\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "getOne",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/national/3",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"national",
+						"3"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "getOne",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/national/3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"national",
+								"3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "78"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4e-+BtUFUAXPhQbct8lVKexRFGgiAI\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 01 Aug 2022 19:53:12 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 3,\n    \"nombre\": \"BécALAS\",\n    \"tipo\": \"Mentoria\",\n    \"pregrado\": true,\n    \"posgrado\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "getAll query params",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/national/?tipo=Idioma",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"national",
+						""
+					],
+					"query": [
+						{
+							"key": "tipo",
+							"value": "Idioma"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "getAll query params",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/national/?tipo=Idioma",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"national",
+								""
+							],
+							"query": [
+								{
+									"key": "tipo",
+									"value": "Idioma"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "97"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"61-0olXjByAUGDNiMryRxDjnIlMF+M\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 01 Aug 2022 19:53:38 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 2,\n        \"nombre\": \"Bécalos English Challenge\",\n        \"tipo\": \"Idioma\",\n        \"pregrado\": true,\n        \"posgrado\": false\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 5,\r\n    \"nombre\": \"POSiBLE\",\r\n    \"tipo\": \"Mentoria\",\r\n    \"pregrado\": false,\r\n    \"posgrado\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/national/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"national",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "partialEdit",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"BécALAS\",\r\n    \"tipo\": \"Mentoria\",\r\n    \"pregrado\": true,\r\n    \"posgrado\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/national/3",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"national",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "completeEdit",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"BécALAS 2\",\r\n    \"tipo\": \"Mentoria\",\r\n    \"pregrado\": false,\r\n    \"posgrado\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/national/4",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"national",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/national/3",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"national",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

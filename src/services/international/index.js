@@ -46,7 +46,7 @@ class InternationalServices {
                 let auxId = this.international.length;
                 const response = { message: `¡Beca #${auxId} agregada correctamente!` }
                 resolve(response);
-            }, 10);
+            }, 0);
         });    
     };
 
@@ -60,7 +60,7 @@ class InternationalServices {
                     const response = { message: 'Beca modificada correctamente', body };
                     resolve(response);
                 };
-            }, 10);
+            }, 0);
         });
     };
 
@@ -74,7 +74,7 @@ class InternationalServices {
                     const response = { message: 'Beca modificada correctamente', body };
                     resolve(response);
                 };
-            }, 10);
+            }, 0);
         });
     };
 
