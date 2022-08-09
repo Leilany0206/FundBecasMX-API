@@ -1,4 +1,5 @@
 const { response } = require("express");
+const axios = require("axios");
 
 class InternationalServices {
 
@@ -18,12 +19,20 @@ class InternationalServices {
 
     findAll(country) {
         return new Promise((resolve, reject) => {
-            setTimeout(() => {
+            setTimeout(async() => {
+                let info = this.international;
                 if (country) {
-                    const filteredData = this.international.filter(scholarship => scholarship.country === country);
-                    resolve(filteredData);
+                    info = this.international.filter(scholarship => scholarship.country === country);
                 }
-                resolve(this.international);
+                for (let i = 0; i < info.length; i++) {
+                    const response = await axios.get(`http://localhost:3000/countries/?name=${info[i].country}`);
+                    if (response && response.data) {
+                        const data = response?.data[0]?.extra || {}
+                        info[i] = { ...info[i], extra: data }
+                        console.log(info[i])
+                    }
+                }
+                resolve(info);
             }, 0);
         });
     }

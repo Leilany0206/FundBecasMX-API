@@ -9,7 +9,9 @@ class nationalServices {
 
     generateData() {
         this.national = [
-            { id: 1, nombre: "Bécalos BeTech", tipo: "Pago de estudios", pregrado: false, posgrado: false },
+            { id: 1, nombre: "Bécalos BeTech", tipo: "Pago de estudios", pregrado: false, posgrado: false, trip: [
+                
+            ] }, 
             { id: 2, nombre: "Bécalos English Challenge", tipo: "Idioma", pregrado: true, posgrado: false },
             { id: 3, nombre: "BécALAS", tipo: "Mentoria", pregrado: true, posgrado: true },
             { id: 4, nombre: "Tu futuro con Bécalos", tipo: "Apoyo económico", pregrado: true, posgrado: false }

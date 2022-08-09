@@ -72,5 +72,21 @@
       "undergraduate": false,
       "graduate": true
     }
+  ],
+  "countries": [
+    {
+      "name": "Japón",
+      "extra": {
+        "language": "Japones",
+        "code": "521"
+      }
+    },
+    {
+      "name": "Corea del Sur",
+      "extra": {
+        "language": "Coreano",
+        "code": "810"
+      }
+    }
   ]
 }
