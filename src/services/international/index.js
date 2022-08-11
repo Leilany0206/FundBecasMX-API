@@ -29,7 +29,12 @@ class InternationalServices {
                     if (response && response.data) {
                         const dataLanguage = response?.data?.language || {}
                         const dataTime = response?.data?.timezone || {}
-                        info[i] = { ...info[i], language: dataLanguage, timezone: dataTime }
+                            const currencyAux = response?.data?.currency?.code || {}
+                            const exchangeRes = await axios.get(`https://v6.exchangerate-api.com/v6/3453fea7062bb3e85a4ba6ee/latest/${currencyAux}`)
+                            const exchangeAuxMXN = exchangeRes?.data?.conversion_rates?.MXN || {}
+                            const exchangeAuxUSD = exchangeRes?.data?.conversion_rates?.USD || {}
+                        const dataCurrency = { currency: currencyAux, exchange_to_MXN: exchangeAuxMXN, exchange_to_USD: exchangeAuxUSD }
+                        info[i] = { ...info[i], language: dataLanguage, timezone: dataTime, currency: dataCurrency }
                         console.log(info[i])
                     }
                 }
