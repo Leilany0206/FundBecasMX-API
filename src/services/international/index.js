@@ -10,10 +10,10 @@ class InternationalServices {
 
     generateData() {
         this.international = [
-            { id: 1, name: "KGSP", country: "Corea del Sur", undergraduate: true, graduate: true },
-            { id: 2, name: "Turkiye Burslari", country: "Turquía", undergraduate: true, graduate: true },
+            { id: 1, name: "KGSP", country: "South Korea", undergraduate: true, graduate: true },
+            { id: 2, name: "Turkiye Burslari", country: "Turkey", undergraduate: true, graduate: true },
             { id: 3, name: "Adobe internship", country: "USA", undergraduate: false, graduate: false },
-            { id: 4, name: "Monbukagakusho MEXT", country: "Japón", undergraduate: true, graduate: true }
+            { id: 4, name: "Monbukagakusho MEXT", country: "Japan", undergraduate: true, graduate: true }
         ];
     }
 
@@ -25,10 +25,11 @@ class InternationalServices {
                     info = this.international.filter(scholarship => scholarship.country === country);
                 }
                 for (let i = 0; i < info.length; i++) {
-                    const response = await axios.get(`http://localhost:3000/countries/?name=${info[i].country}`);
+                    const response = await axios.get(`https://travelbriefing.org/${info[i].country}?format=json`);
                     if (response && response.data) {
-                        const data = response?.data[0]?.extra || {}
-                        info[i] = { ...info[i], extra: data }
+                        const dataLanguage = response?.data?.language || {}
+                        const dataTime = response?.data?.timezone || {}
+                        info[i] = { ...info[i], language: dataLanguage, timezone: dataTime }
                         console.log(info[i])
                     }
                 }
